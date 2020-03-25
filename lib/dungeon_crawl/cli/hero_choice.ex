@@ -18,6 +18,10 @@ defmodule DungeonCrawl.CLI.HeroChoice do
     |> confirm_hero
   end
 
+  @doc """
+    Displays a list of heroes with their 0-based index plus one in front of
+    them (the offset passed to Enum.with_index/2)
+  """
   def display_options(options) do
     options
     |> Enum.with_index(1)
