@@ -4,18 +4,20 @@ defmodule DungeonCrawl.Room do
     and available actions. Action functions are imported from *.Action
   """
   alias DungeonCrawl.Room
+  alias DungeonCrawl.Room.Triggers
 
   import DungeonCrawl.Room.Action
 
-  defstruct [description: nil, actions: []]
+  defstruct [description: nil, actions: [], trigger: nil]
 
   @doc """
     List all available rooms
   """
   def all, do: [
     %Room{
-      description: "You found a quiet place. Looks safe for a little nap.",
-      actions: [forward(), rest()]
+      description: "You can see the light of day. You found the exit!",
+      actions: [forward()],
+      trigger: Triggers.Exit
     }
   ]
 end
