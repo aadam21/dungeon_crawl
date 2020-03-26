@@ -5,7 +5,8 @@ defmodule DungeonCrawl.CLI.BaseCommands do
 
   @doc """
     Take any list of options and use an index offset of 1 to present choices
-    to users
+    to users. The option is displayed based on an implemented protocol for
+    characters and actions, which return the necessary value as a string
   """
   def display_options(options) do
     options
