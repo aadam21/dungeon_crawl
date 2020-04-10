@@ -5,9 +5,9 @@ defmodule DungeonCrawl.Room.Action do
   """
   alias DungeonCrawl.Room.Action
 
-  @type t :: %Action{id: atom, label: String.t}
+  @type t :: %Action{id: atom, label: String.t()}
 
-  defstruct [label: nil, id: nil]
+  defstruct label: nil, id: nil
 
   defimpl String.Chars do
     def to_string(action), do: action.label
